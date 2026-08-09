@@ -39,6 +39,31 @@ a:hover {
   text-decoration: underline;
 }
 
+button {
+    border: 1px solid #0A1A2F;
+    background-color: #0A1A2F;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    border: 1px solid #0A1A2F;
+    background-color: #2ED1C5;
+    color: #0A1A2F;
+}
+
+input {
+    border: 1px solid #2ED1C5;
+    background-color: #0A1A2F;
+    color: white;
+}
+
+textarea {
+    border: 1px solid #2ED1C5;
+    background-color: #0A1A2F;
+    color: white;
+}
+
 footer {
   text-align: center;
   padding: 2rem;
