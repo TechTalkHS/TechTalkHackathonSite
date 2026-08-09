@@ -1,10 +1,6 @@
-$navy: #0A1A2F;
-$turquoise: #2ED1C5;
-$white: #ffffff;
-
 body {
-  background: $navy;
-  color: $white;
+  background: #0A1A2F;
+  color: #ffffff;
   font-family: "Inter", sans-serif;
   margin: 0;
 }
@@ -12,18 +8,18 @@ body {
 header {
   padding: 1.5rem;
   text-align: center;
-  border-bottom: 2px solid $turquoise;
+  border-bottom: 2px solid #2ED1C5;
+}
 
-  img.logo {
-    width: 120px;
-    margin-bottom: 1rem;
-  }
+header img.logo {
+  width: 120px;
+  margin-bottom: 1rem;
+}
 
-  h1 {
-    font-size: 2rem;
-    margin: 0;
-    color: $turquoise;
-  }
+header h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: #2ED1C5;
 }
 
 main {
@@ -34,19 +30,18 @@ main {
 }
 
 a {
-  color: $turquoise;
+  color: #2ED1C5;
   text-decoration: none;
   font-weight: 600;
+}
 
-  &:hover {
-    text-decoration: underline;
-  }
+a:hover {
+  text-decoration: underline;
 }
 
 footer {
   text-align: center;
   padding: 2rem;
-  border-top: 2px solid $turquoise;
+  border-top: 2px solid #2ED1C5;
   opacity: 0.7;
 }
-
