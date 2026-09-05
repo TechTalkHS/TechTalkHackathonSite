@@ -26,18 +26,38 @@ date:   2026-09-5 10:30:00
 </form>
 
 <script>
-    document.getElementbyId("registration").addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    await fetch('./netlify/functions/notify_discord', {
-        method: 'POST',
-        body: JSON.stringify({
-            name: formData.get('name'),
-            team_name: formData.get('team_name'),
-            members: formData.get('members'),
-            email: formData.get('email'),
-            can_come: formData.get('can_come'),
-        })
-    })
-    })   
+    document.getElementById("registration").addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const form = e.target;
+        const button = form.querySelector("button[type='submit']");
+        const formData = new FormData(form);
+
+        button.disabled = true;
+        try {
+            const response = await fetch("/.netlify/functions/notify_discord", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name: formData.get("name"),
+                    team_name: formData.get("team_name"),
+                    members: formData.get("members"),
+                    email: formData.get("email"),
+                    can_come: formData.get("can_come"),
+                }),
+            });
+
+            if (!response.ok) {
+                throw new Error("The registration could not be sent.");
+            }
+
+            form.reset();
+            alert("Registration submitted!");
+        } catch (error) {
+            console.error(error);
+            alert("We could not submit your registration. Please try again.");
+        } finally {
+            button.disabled = false;
+        }
+    });
 </script>

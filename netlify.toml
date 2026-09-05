@@ -1,0 +1,5 @@
+[build]
+  base = "docs"
+  command = "bundle exec jekyll build"
+  publish = "_site"
+  functions = "netlify/functions"
